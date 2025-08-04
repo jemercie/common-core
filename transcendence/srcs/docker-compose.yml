@@ -1,0 +1,59 @@
+version: "3"
+
+services:
+  nginx:
+    container_name: nginx
+    build:
+      context: requirements/nginx
+      dockerfile: Dockerfile
+    image: nginx:v1.0
+    env_file: .env
+    networks:
+      - transcendence
+    restart: always
+    ports:
+      - "8080:8080"
+
+  django:
+    container_name: django
+    build:
+      context: requirements/django
+      dockerfile: Dockerfile
+    image: django:v1.0
+    env_file: .env
+    volumes:
+      - django:/transcendence
+    networks:
+      - transcendence
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+
+  database:
+    container_name: database
+    image: postgres
+    env_file: .env
+    environment:
+      - PGPORT=5432
+    volumes:
+      - database:/var/lib/postgresql/data
+    networks:
+      - transcendence
+    restart: always
+    ports:
+      - "5432:5432"
+
+volumes:
+  django:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '../data/django'
+  database:
+
+networks:
+  transcendence:
+    driver: bridge

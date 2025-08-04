@@ -1,0 +1,63 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUU</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'index/css/index-style.css' %}">
+    <div id="token-42-auth"></div>
+	</head>
+
+<body>
+	<!-- background -->
+	<div class="patterns pt1">
+		<nav id="navbar" class="navbar navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" onclick="route(event, 'home/')"> FT_PONG </a>
+				<div id="navbar-buttons" class="middle-buttons">
+				<button onclick="route(event, 'chat/')" id="chatButton" type="button" class="btn btn-primary btn-light">Chat</button>
+				<button onclick="route(event, 'game/')" id="gameButton" type="button" class="btn btn-primary btn-light">Game</button>
+				{% if is_connected is True %}
+					<button onclick="route(event, 'profile/')" id="statsButton" type="button" class="btn btn-primary btn-light">Profile</button>
+					<button onclick="redirect(event, 'logout')" id="homeButton" type="button" class="btn btn-primary btn-light">Logout</button>
+				{% endif %}
+				{% if is_connected is None %}
+					<button onclick="route(event, 'register/')" id="homeButton" type="button" class="btn btn-primary btn-light">Register</button>
+					<button onclick="route(event, 'login/')" id="homeButton" type="button" class="btn btn-primary btn-light">Login</button>
+				{% endif %}
+			</div>
+    </div>
+	</nav> <!--  <- Bizzare la <nav> est fermer apres la div sinon ca fonctionne pas ?? -->
+		<div id="main-page">
+		</div>
+    </div>
+    </div>
+	<!-- include bootstrap js popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+  </html>
+    <!-- script -->
+    <script src="{% static 'index/js/hook.js' %}"></script>
+	<script src="{% static 'index/js/routes.js' %}"></script>
+	<script src="{% static 'index/js/profile.js' %}"></script>
+	<script src="{% static 'index/js/redirect-requests.js' %}"></script>
+	<script src="{% static 'index/js/socket.js' %}"></script>
+	<script src="{% static 'index/js/socket_function.js' %}"></script>
+
+	<!-- utils -->
+	<script src="{% static 'chat/js/notify.js' %}"></script>
+	<script src="{% static 'chat/js/friends.js' %}"></script>
+	<script src="{% static 'chat/js/ignore.js' %}"></script>
+
+	<!-- chat -->
+	<script src="{% static 'chat/js/chat_init.js' %}"></script>
+
+	<!-- <script src="{% static 'chat/js/chat_base.js' %}"></script>
+	<script src="{% static 'chat/js/chat_tab_friends.js' %}"></script>
+	<script src="{% static 'chat/js/chat_tab_users.js' %}"></script>
+	<script src="{% static 'chat/js/socket_function.js' %}"></script> -->
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<div class="container mt-5" id="content">
+  <!-- css include -->
+  <link rel="stylesheet" href="{% static 'index/css/style-forms.css' %}">
+
+  <div class="card SignUpForm" id="loginForm">
+        <div class="card-content p-4">
+            <h1 class="card-title mb-4">SIGN IN</h1>
+            <form id="signInForm" method="POST">
+              {% csrf_token %}
+              <meta name="csrf-token" content="{{ csrf_token }}">
+                <div class="mb-3 mt-4">
+                  <div class="mb-3 mt-4">
+                    <label class="form-label">Username</label>
+                    {{ form.username  | add_class:'form-control' }}
+                  </div>
+                  <div class="mb-3 mt-4">
+                    <label class="form-label">Password</label>
+                    {{ form.password | add_class:'form-control' }}
+                  </div>
+                <button type="submit" onclick="redirect(event, 'submitLogin')" class="btn btn-light mt-4">Login</button>
+            </form>
+            <meta name="csrf-token" content="{{ csrf_token }}">
+            <a href="https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-c5b1d7cda698fcaae5901303ddff1e245f32d1df0c0331e045c9452fcdef758c&redirect_uri=https%3A%2F%2F127.0.0.1%3A8080%2Flogin%2F&response_type=code" class="btn btn-light mt-4">Login with  <img id="logo-42" src="{% static '/index/images/42_logo.png' %}" alt="42Logo"></a>
+            <p class="mt-3">
+                Don't have an account? <a href="#" onclick="route(event, 'register/')">Register</a>
+            </p>
+        </div>
+        <img id="campfire" src="{% static '/index/images/cats-at-a-fire-very-wholesome-none-of-them-died.gif' %}" alt="GLORPDRIVE">
+    </div>
+</div>

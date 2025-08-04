@@ -1,0 +1,54 @@
+@font-face
+{
+    font-family: "astronomus";
+    src: url('../font/Astronomus.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+}
+
+body .patterns {
+    width: 100vw;
+    height: 100vh;
+}
+
+body .pt1 {
+    background-color: black;
+    background-image: 
+    linear-gradient(0deg, white 1px, transparent 1px),
+    linear-gradient(90deg, white 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+}
+
+.navbar{
+    font-family: "astronomus", sans-serif;
+    /* display: block; */
+    background: rgba(199, 191, 243, 0.3);
+}
+
+/* #main-page{
+
+} */
+
+.navbar .navbar-brand:hover{
+    color: #7682de;
+    cursor:pointer
+}
+.navbar .middle-buttons .btn:hover{
+    color: #7682de;
+}
+
+.navbar .middle-buttons .btn{
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.dropdown-item:hover{
+    color: #7682de;
+}

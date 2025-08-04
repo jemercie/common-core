@@ -1,0 +1,426 @@
+@font-face
+{
+    font-family: "astronomus";
+    src: url('../font/Astronomus.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: "square";
+    src: url('../font/square_sans_serif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.profile-content{
+    padding-top: 0.5%;
+    display: flex;
+    justify-content: space-between;
+}
+.profile-stats{
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(23, 22, 27, 0.568);
+    border: 0.02px rgba(23, 22, 27, 0.882) solid;
+    backdrop-filter: blur(3px);
+}
+.profile-stats .stats-title{
+    font-size: x-large;
+    padding-top: 10px;
+    text-align: center;
+    color:rgb(255, 255, 255);
+    text-shadow: 0 0 2px rgb(255, 255, 255), 0 0 4px white;
+}
+.profile-stats .history-title{
+    font-size: larger;
+    padding-top: 10px;
+    padding-left: 5%;
+    color:rgb(229, 229, 229);
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+    margin:5px;
+}
+.global-dashboard-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.392);
+    backdrop-filter: blur(1px);
+    border: 0.002px rgba(255, 255, 255, 0.627) solid;
+    margin:5px;
+}
+.global-dashboard-element{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.global-dashboard-container p{
+    margin-bottom: 1px;
+    color:#7682de;
+    font-size: smaller;
+}
+.global-dashboard-container b{
+    justify-content: flex-start;
+    color: rgba(255, 255, 255, 0.986);
+    text-shadow: 1px 1px 5px black;
+    font-family: "square", sans-serif;
+}
+.game-history-container{
+    background-color: #7682de28;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border-radius: 10px;
+}
+.game-container{
+    /* background-color: pink; */
+    color:white;
+    border: 1px #7682de solid;
+    background-color: rgba(0, 0, 0, 0.392);
+    backdrop-filter: blur(1px);
+    margin:2px;
+    border-radius: 10px;
+}
+.game-stats-container{
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.545);
+    margin: 3px;
+    padding: 2px;
+    border-radius: 10px;
+}
+.game-stats-container:hover{
+    cursor: pointer;
+}
+.game-win{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 10%;
+    align-items: center;
+    /* background-color: aquamarine; */
+    font-size: small;
+    text-shadow: 0 0 10px rgb(0, 251, 255);
+
+}
+.game-loose{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 10%;
+    align-items: center;
+    /* background-color: aquamarine; */
+    font-size: small;
+    text-shadow: 0 0 10px rgb(255, 60, 229);
+}
+.game-score{
+    /* background-color: violet; */
+    display: flex;
+    justify-content: spa;
+    align-items: center;
+    flex-basis: 70%;
+}
+.game-user-score{
+    font-family: "square", sans-serif;
+    flex-basis: 5%;
+    font-size: x-large;
+    color: #0f1112;
+    text-shadow:
+    0.25px 0.25px 1px white,
+    1px 1px 1px #1E90FF,
+    1.5px 1.5px 1px white,
+    -0.25px -0.25px 1px white,
+    -1px -1px 1px #1E90FF,
+    -1.5px -1.5px 1px white,
+    0 0 5px #1E90FF,
+    0 0 10px #00ffffe6,
+    0 0 15px white;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+}
+.vs-and-final{
+    flex-basis: 80%;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}.game-user-username{
+    font-size: medium;
+    font-family: "square", sans-serif;
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+    overflow: hidden;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-basis: 40%;
+    margin-left: 2%;
+}
+.vs-game{
+    /* background-color: purple; */
+    color: #0f1112;
+    text-shadow: 
+    0.25px 0.25px 1px white,
+    0.5px 0.5px 1px rgb(140, 140, 255),
+    0.5px 0.5px 1px #7682de,
+    1px 1px 1px #1E90FF,
+    1.5px 1.5px 1px white,
+    -0.25px -0.25px 1px white,
+    -0.5px -0.5px 1px rgb(140, 140, 255),
+    -1px -1px 1px #1E90FF,
+    -1.5px -1.5px 1px white,
+    0 0 5px #1E90FF,
+    0 0 10px #00ffffe6,
+    0 0 15px #00ffffe6,
+    0 0 20px white;
+    flex-basis: 20%;
+    font-size: xx-large;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-opponent-username{
+    font-size: medium;
+    font-family: "square", sans-serif;
+    text-shadow: 0 0 2px rgb(255, 255, 255);
+    overflow: hidden;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-basis: 40%;
+    margin-right: 2%;
+}
+.game-opponent-score{
+    font-family: "square", sans-serif;
+    font-size: x-large;
+    flex-basis: 5%;
+    color: black;
+    text-shadow:
+    0.25px 0.25px 1px white,
+    1px 1px 1px #1E90FF,
+    1.5px 1.5px 1px white,
+    -0.25px -0.25px 1px white,
+    -1px -1px 1px #1E90FF,
+    -1.5px -1.5px 1px white,
+    0 0 5px #1E90FF,
+    0 0 10px #00ffffe6,
+    0 0 15px white;
+    /* background-color: orange; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+}
+.game-date{
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 10%;
+}
+.final-tournament{
+    display: flex;
+    justify-content: center;
+    /* background-color: pink; */
+    border-radius: 10px;
+    font-size: small;
+    padding: 0px;
+    margin: 0px;
+}
+.game-dashboard-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.545);
+    margin-bottom: 3px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 2px;
+    border-radius: 10px;
+    font-stretch: wider;
+    font-style: italic;
+    font-weight: lighter;
+}
+.dash-dash{
+    display: flex;
+    justify-content: space-around;
+    /* background-image: url(../images/ECLAIRRR.png);
+    background-position-x: center;
+    background-position-y: 45%;
+    background-size: 30px;
+    background-repeat: no-repeat; */
+}
+.user-dash{
+    flex-basis: 30%;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: smaller;
+    color:pink;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.user-dash .balls-hit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+.user-dash .balls-hit div{
+    font-family: "square", sans-serif;
+    font-size: medium;
+    color: white;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.user-dash .boosts-catch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+.user-dash .boosts-catch div{
+    font-family: "square", sans-serif;
+    font-size: medium;
+    color: white;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.max-speed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+    padding: 0px;
+    margin: 0px;
+}
+.max-speed div{
+    font-family: "square", sans-serif;
+    font-size: medium;
+    color: white;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.opponent-dash{
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: smaller;
+    color: #7682de;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.opponent-dash .balls-hit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+.opponent-dash .balls-hit div{
+    font-family: "square", sans-serif;
+    font-size: medium;
+    color: white;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.opponent-dash .boosts-catch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+.opponent-dash .boosts-catch div{
+    font-family: "square", sans-serif;
+    font-size: medium;
+    color: white;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.profile-friend-list{
+    margin: 5px;
+    border-radius: 10px;
+    padding-bottom: 8px;
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(23, 22, 27, 0.568);
+    border: 0.02px rgba(23, 22, 27, 0.882) solid;
+    backdrop-filter: blur(3px);
+    background-image: url(../images/maxwell-cat.gif);
+    background-position-x: center;
+    background-position-y: bottom;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+
+.profile-friend-list .friend-list-title{
+    font-size:large;
+    padding-top: 10px;
+    text-align: center;
+    color: #7682de;
+}
+.profile-friend-list .friend-link{
+    cursor: pointer;
+    overflow: hidden;
+    margin: 3%;
+    font-size: small;
+    padding-left: 13%;
+    padding-right: 6%;
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+    color: rgb(207, 207, 207);
+    text-align: left;
+}
+.profile-friend-list .friend-link:hover{
+    color: white;
+    text-shadow: 0.05px 0.05px white, -0.05px -0.05px white,0 0 2px rgb(255, 255, 255);
+}
+.profile-friend-list .dropdown-item{
+    cursor: pointer;
+    font-size: small;
+    border-radius: 6px;
+}
+.profile-friend-list .dropdown-item:hover{
+    background-color: rgb(223, 223, 223);
+    text-shadow: 0.05px 0.05px #7682de, -0.05px -0.05px #7682de, 0 0 2px rgb(255, 255, 255);
+}
+.profile-friend-list .dropdown-item:active{
+    color: pink;
+    background-color: rgb(223, 223, 223);
+}

@@ -1,0 +1,40 @@
+{% load static %}
+
+{% if user.is_authenticated %}
+	<p>Connecte sous {{ user.username }} | <a href="{% url 'user:logout' %}">Deconnexion</a> </p>
+
+{% else %}
+	<p><a href="{% url 'user:login' %}">Connexion</a> | <a href="{% url 'user:register' %}">Inscription</a> </p>
+
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mon site web</title>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			let url = `ws://${window.location.host}/ws/socket-server/`
+			let status = {}
+
+			const socket = new WebSocket( url )
+
+			socket.onmessage = function( e ){
+				let data = JSON.parse(e.data)
+
+				if (data.type == 'connection_established')
+				{
+					status.connected = true
+					console.log("Connected", status.connected)
+				}
+				console.log("Data", data)
+			}
+		</script>
+		<h1>Salut, bienvenu sur mon site USEERR!</h1>
+		<h2>Aujourd'hui nous somme le 01/01/1970</h2>
+	</body>
+</html>

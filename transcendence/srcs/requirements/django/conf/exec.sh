@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sleep 2
+
+python3 manage.py migrate
+python3 manage.py init_users
+
+exec python3 manage.py runserver 0.0.0.0:8001

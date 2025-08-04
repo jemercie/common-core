@@ -1,0 +1,16 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<div class="container mt-5" id="content">
+    {% if is_connected %}
+    <div>
+    <h1 class="AAA"> UR CONNECTED, WELL DONE</h1>
+    <img id="homeglorp" src="{% static '/index/images/glorp-glorpdrive.gif' %}" alt="GLORPDRIVE">
+    </div>
+    {% else %}
+    <div>
+    <h1 class="AAA"> UR NOT CONNECTED</h1>
+    <img id="homeglorp" src="{% static '/index/images/image.webp' %}" alt="GLORPDRIVE">
+    </div>
+    {% endif %}
+</div>

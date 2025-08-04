@@ -1,0 +1,175 @@
+
+{% load static %}
+{% load widget_tweaks %}
+
+<div class="container mt-5" id="content">
+    <!-- css inlcude -->
+    <link rel="stylesheet" href="{% static 'index/css/profile-style.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/profile-body.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/profile-edit.css' %}">
+
+    <meta name="csrf-token" content="{{ csrf_token }}">
+
+    <div class="profile">
+    <div class="profile-header">
+        <div class="profile-infos {% if current == False %}other-user{%else%}current-user{%endif%}">
+        
+
+            <div class="image" id="image_reload">
+                {% if profile.profile_image %}
+                <div class="profile-image-container">
+                <img class="profile-image" src="{{ profile.profile_image.url }}" alt="Profile Image">
+                </div>
+                {% else %}
+                <div class="profile-image-container">
+                <img class="profile-image" src="{% static '/index/images/catjam-cat.gif' %}" alt="GLORPDRIVE">
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="username-bio">
+
+            <div class="username" id="username_reload">
+            <h1 class="profile-username">{{ profile.user.username }}</h1>
+            <img id="catdance" src="{% static '/index/images/small-dancing-white-cat-dance-funny.gif' %}" alt="GLORPDRIVE">
+            </div>
+
+            <div class="bio-container" id="bio_reload">
+            <p class="profile-bio">{{ profile.bio }}</p>
+            </div>
+
+            </div>
+            {% if current == False %}
+            <!-- <button class="message-button">message</button> -->
+            <div class="profile-header-buttons">
+                {% if friends%}
+                <button class="follow-button">Unfollow</button>
+                {% else %}
+                <button class="follow-button">Follow</button>
+                {% endif %}
+            </div>
+            {% endif %}
+            <!-- if followed, unfollow and invite game + msg -->
+        </div>
+
+        {% if current %}
+        <div class="edit-button">
+        <div class="edit-button-card">
+            <div id="image">
+            <button type="button" onclick="redirForms('get_image_form', '#image')" class="btn btn-sm small-update-button">✏ Edit Profile Pic</button>
+            </div>
+            <div id="username">
+            <button type="button" onclick="redirForms('get_username_form', '#username')" class="btn btn-sm small-update-button">✏ Edit Username</button>
+            </div>
+            <div id="bio">
+            <button type="button" onclick="redirForms('get_bio_form', '#bio')" class="btn btn-sm small-update-button">✏ Edit status</button>
+            </div>
+            <div id="password">
+            <button type="button" onclick="redirForms('get_password_form', '#password')" class="btn btn-sm small-update-button">✏ Edit Password</button>
+            </div>
+        </div>
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="profile-content">
+        <div class="profile-stats {% if current == False %}other-user{%else%}current-user{%endif%}">
+        <div class="stats-card">
+            <h1 class="stats-title">stats</h1>
+                <div class="global-dashboard-container">
+                    <div class="global-dashboard-element">
+                    <p>total:</p><b>{{global_dashboard_data.total_party}}</b>
+                    </div>
+                    <div class="global-dashboard-element">
+                    <p>win:</p><b>{{global_dashboard_data.total_win}}</b>
+                    </div>
+                    <div class="global-dashboard-element">
+                    <p>loose:</p><b>{{global_dashboard_data.total_loose}}</b>
+                    </div>
+                    <div class="global-dashboard-element">
+                    <p>winrate:</p><b>{{global_dashboard_data.dif_win_loose}}</b>
+                    </div>
+                    <div class="global-dashboard-element">
+                    <p>balls hit:</p><b>{{global_dashboard_data.balls_hit}}</b>
+                    </div>
+                </div>
+
+            <h1 class="history-title">History:</h1>
+                <div class="game-history-container">
+                    {% for game, game_dash in games_combined %}
+                    <div class="game-container">
+                        <!-- rajouter un booleen pour savoir si la game est gagnee pour pouvoir faire une condition pour changer la couleur de la'ffichage en fonction -->
+                        
+                        <div class="game-stats-container" data-bs-toggle="collapse" data-bs-target="#game-dashboard-{{ forloop.counter }}" >
+
+                            {% if game.user_score > game.opponent_score %}
+                            <div class="game-win">WIN</div>
+                            {% else %}
+                            <div class="game-loose">LOOSE</div>
+                            {% endif %}
+
+                            <div class="game-score">
+                                <div class="game-user-score">{{game.user_score}}</div>
+                                    <div class="vs-and-final">
+                                    <div class="game-user-username" >{{profile.user.username}}</div>
+                                    <p class="vs-game">VS</p>
+                                    <div class="game-opponent-username" >{{game.opponent}}</div>
+                                    </div>
+                                <div class="game-opponent-score">{{game.opponent_score}}</div>
+                            </div>
+                            <div class="game-date">date{{game.date}}</div>
+
+                        </div>
+                            {% if game.tournament_final %}
+                            <p class="final-tournament">⚡ FINAL TOURNAMENT ⚡</p>
+                            {% endif %}
+
+                        <div class="game-dashboard-container collapse" id="game-dashboard-{{forloop.counter}}">
+                            <div class="dash-dash">
+                                <div class="user-dash">
+                                    <div class="balls-hit">balls hit: <div>{{game_dash.balls_hit}}</div></div>
+                                    <div class="boosts-catch">boosts catch: <div>{{game_dash.boosts_catch}}</div></div> 
+                                </div>
+                                <div class="opponent-dash">
+                                    <div class="balls-hit">balls hit: <div>{{game_dash.balls_hit}}</div></div>
+                                    <div class="boosts-catch">boosts catch: <div>{{game_dash.boosts_catch}}</div></div> 
+                                </div>
+                            </div>
+                            <div class="max-speed">max speed: <div>{{game_dash.max_speed}}</div></div>
+                        </div>
+                    
+                    </div>
+                    {%endfor%}
+                </div>
+
+        </div>
+    </div>
+
+    {% if current %}
+        <div class="profile-friend-list">
+        <div class="friend-list-card">
+            <h1 class="friend-list-title">friends</h1>
+            <!-- {{friends_list}} -->
+            {% for friend_id, friend in friends_list %}
+            <div class="dropdown">
+                <p class="friend-link dropdown-toggle" data-bs-toggle="dropdown">{{ friend_id }}</p>
+                <ul id="dropdown_menu_{{ friend_id }}" class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Message</a></li>
+                    <li><a class="dropdown-item" href="#">Game invite</a></li>
+                    <li><a class="dropdown-item" onclick="route(event, 'profile/{{friend_id}}/')">Profile</a></li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+    {% endif %}
+    </div>
+    </div>
+
+
+    
+</div>
+
+    <!-- <p class="profile-nostat"> no stats yet  -->
+    <!-- <img id="nostat" src="{% static '/index/images/loulou-pp.png' %}" alt="GLORPDRIVE"> -->
+    <!-- </p> -->

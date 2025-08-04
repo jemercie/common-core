@@ -1,0 +1,69 @@
+
+{% load static %}
+{% load widget_tweaks %}
+
+<div class="container form-group mt-5" id="content">
+
+    <div class="input-profile-update" id="password">
+        <form id="password_form" method="POST" enctype="multipart/form-data">
+        <meta name="csrf-token" content="{{ csrf_token }}">
+        <div class="coolinput">
+        <label for="password_form.old_password_id" class="text">old pwd:</label>
+        {{ password_form.old_password  | add_class:'profile-form-control' }}
+        </div>
+
+        <div class="coolinput">
+        <label for="password_form.old_password_id" class="text">new pwd:</label>
+        {{ password_form.new_password1 | add_class:'profile-form-control' }}
+        </div>
+
+        <div class="coolinput">
+        <label for="password_form.old_password_id" class="text">confirm:</label>
+        {{ password_form.new_password2 | add_class:'profile-form-control' }}
+        <div class="edit-change-state-buttons">
+            <button type="button" onclick="redirForms('submit_password_form', '#password')" class="btn btn-sm small-save-button">Save</button>
+            <button type="button" onclick="redirForms('dismiss', '.edit-button')" class="btn btn-sm small-cancel-button">Cancel</button>
+        </div> 
+    </form>
+    </div>   
+</div>
+
+    <div class="input-profile-update" id="username">
+        <form id="username_form">
+        <meta name="csrf-token" content="{{ csrf_token }}">
+        <div class="coolinput">
+        <label for="username_form.username_id" class="text">new name:</label>
+        {{ username_form.username | add_class:'profile-form-control' }}
+        <div class="edit-change-state-buttons">
+            <button type="button" onclick="redirForms('submit_username_form', '#username')" class="btn btn-sm small-save-button">Save</button>
+            <button type="button" onclick="redirForms('dismiss', '.edit-button')" class="btn btn-sm small-cancel-button">Cancel</button>
+        </div>
+        </form>
+        </div>
+    </div>
+    <div class="input-profile-update" id="bio">
+        <form id="bio_form" method="POST" enctype="multipart/form-data">
+        <meta name="csrf-token" content="{{ csrf_token }}">
+        <div class="coolinput">
+        <label for="username_form.username_id" class="text">status</label>
+        {{ profile_form.bio | add_class:'profile-form-control' }}
+        <div class="edit-change-state-buttons">
+            <button type="button" onclick="redirForms('submit_bio_form', '#bio')" class="btn btn-sm small-save-button">Save</button>
+            <button type="button" onclick="redirForms('dismiss', '.edit-button')" class="btn btn-sm small-cancel-button">Cancel</button>
+        </div>
+    </div>    
+    </form>
+    </div>
+
+    <div class="input-profile-update" id="image">
+        <form id="image_form" method="POST" enctype="multipart/form-data">
+        <div class="coolinput">
+        <meta name="csrf-token" content="{{ csrf_token }}">
+        {{ profile_picture_form.profile_image | add_class:'profile-form-control' }}
+        <div class="edit-change-state-buttons">
+            <button type="button" onclick="redirForms('submit_image_form', '#image')" class="btn btn-sm small-save-button">Save</button>
+            <button type="button" onclick="redirForms('dismiss', '.edit-button')" class="btn btn-sm small-cancel-button">Cancel</button>
+        </div>
+    </div>    
+    </form>
+</div>

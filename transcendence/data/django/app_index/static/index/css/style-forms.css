@@ -1,0 +1,91 @@
+@font-face
+{
+    font-family: "astronomus";
+    src: url('../font/Astronomus.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.card {
+    font-family: "astronomus", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    color: white;
+    background-color: rgba(199, 191, 243, 0.1);
+    width: 500px;
+    max-width: calc(100% - 4em);
+    min-width: 500px;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    border-radius: 13px;
+}
+
+.card-content {
+    max-width: 400px;
+    min-width: 400px;
+    margin-inline: auto;
+    text-align: left;
+}
+#campfire {
+    display: block;
+    margin: 0 auto;
+}
+.card-title {
+    color: #7682de;
+    display: flex;
+    justify-content: center;
+}
+.SignUpForm .form-control {
+    background-color: inherit;
+    border: none;
+    color: white;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+.SignUpForm .form-control:focus {
+    background-color: inherit;
+    border-color: white;
+    color: white;
+    box-shadow: none;
+}
+
+.SignUpForm .btn {
+    color:  #7682de;
+    border-radius: 0;
+    width: 100%;
+    font-weight: bold;
+}
+
+.SignUpForm .btn:hover {
+    color: #7682de;
+}
+
+p {
+    color: gray;
+    text-align: center;
+}
+
+p a {
+    color: #e1e1e1;
+    text-decoration: none;
+}
+
+p a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#logo-42 {
+    height: 20px; /* Height of the image */
+    width: auto; /* Width auto adjusts to maintain aspect ratio */
+    vertical-align: middle; /* Align the image vertically with the text */
+    margin-right: 5px; /* Add some margin between the image and the text */
+}

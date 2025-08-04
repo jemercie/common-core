@@ -1,0 +1,111 @@
+
+/* position relative
+vw par rapport a la window
+les trucs en % */
+
+
+.edit-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 2;
+    background-color: rgba(0, 0, 0, 0.392);
+    backdrop-filter: blur(1px);
+    border: 0.002px rgba(255, 255, 255, 0.627) solid;
+    /* background-color: rgba(23, 22, 27, 0.568);
+    border: 0.02px rgba(23, 22, 27, 0.882) solid;
+    backdrop-filter: blur(3px); */
+    flex-basis: 25%;
+    overflow: hidden;
+    margin: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 11px;
+    border-radius: 10px;
+    font-family: "astronomus", sans-serif;
+
+}
+
+.input-profile-update {
+    display: flex;
+    position: relative;
+    border-radius: 6px;
+}
+
+.coolinput {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+}
+
+.coolinput label.text {
+    font-size: 0.9em;
+    color: #7682de;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    font-weight: 700;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    width: fit-content;
+}
+
+.profile-form-control {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 3;
+    padding: 5px 7px;
+    font-size: 0.65rem;
+    border: 1px white solid;
+    border-radius: 3px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(199, 191, 243, 0.05);
+    color: white;
+    width: 100%;
+}
+
+.profile-form-control:focus {
+    background-color: inherit;
+    border-color: #7682de;
+    box-shadow: none;
+    color: white;
+}
+
+.edit-button .btn {
+    font-size: small;
+    font-family: "astronomus", sans-serif;
+    background-color: transparent;
+    border: none;
+    color: rgb(207, 207, 207);
+    text-shadow: black 0.1.5em 0.1.5em 0.3em;
+    padding: 5.5px 10px;
+    transition: color 0.3s ease;
+}
+
+.edit-button .btn:hover{
+    color: #7682de;
+    text-shadow: 0.3px 0.3px 1px #7682de, 0.5px 0.5px 1px black, -0.3px -0.3px 1px #7682de, -0.5px -0.5px 1px black;
+
+    font-family: "astronomus", sans-serif;
+}
+
+.edit-button .small-save-button{
+    color: #00ffffe6;
+}
+.edit-button .small-save-button:hover{
+    color: white;
+    text-shadow: 0 0 0.1em white;
+    padding-top: -1;
+}
+.edit-button .small-cancel-button{
+    color:#7682de;
+}
+.edit-button .small-cancel-button:hover{
+    color: white;
+    text-shadow: 0 0 0.1em white;
+    padding-top: -1;
+}
+
