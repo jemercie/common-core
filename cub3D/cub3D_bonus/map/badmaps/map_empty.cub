@@ -1,0 +1,10 @@
+
+NO ./img/north.png
+SO ./img/south.png
+WE ./img/west.png
+EA ./img/east.png
+
+F 200,100,0
+C 0,0,255
+
+

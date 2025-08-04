@@ -1,0 +1,21 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    problemes                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jemercie <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/01/13 20:21:39 by jemercie          #+#    #+#              #
+#    Updated: 2024/01/13 20:23:42 by jemercie         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+mmm unset PATH
+	export PATH=/bin
+		-> marche po la boucle va pas jusqu'au premier jsp
+	export PATH=/bin:/bin
+		-> fonctionne
+
+y'a des problemes avec les derniers fix de '.' aussi
+
+y'a des versions qui marchent mieux sur discord OOO

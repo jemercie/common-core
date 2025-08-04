@@ -1,0 +1,158 @@
+VSUPP : --suppressions=/nfs/homes/jemercie/Documents/polinishell/offishell/minishell/vsupp
+
+valgrind --trace-children=yes --suppressions=/nfs/homes/jemercie/Documents/polinishell-main/offishell/minishell/vsupp --leak-check=full ./minishell
+
+echo caca >>out | cat vsupp| rev | wc -l
+
+COMPILER : gcc -g *.c ft_printf/libftprintf.a -lreadline -o minishell
+
+		*** TESTS PARSING ***
+
+echo '$USER' $USER "$USER" "'$USER'" '"$USER"' "$'USER'"
+
+echo '$US$?ER' $US$?ER $? "$USER$?" "'$?$USER'" '"$USER"$?' "$'USER'"
+
+je <<suis un <<an" imal" et je me nourris de <<"chaussu"res
+
+je <<$USERsuis un <<an" imal"'"$USER"' et "$USER"je me nourris'$USER' de <<"chaus"'$USER'"su"res
+
+je suis <rat >ra"     tat"ouille >>ratat'a  ' tat |$USER
+
+<<ratat'a  ' tat krr |$USER
+
+<<an" imal"'"$USER"'
+
+echo je '$USER' $USER "$USER" "'$USER'" '"$USER"' "$'USER'"
+
+je <$USERsuis un <an" imal"'"$USER"' et "$USER"je me nourris'$USER' de <"chaus"'$USER'"su"res | je '$USER' $USER "$USER" "'$USER'" '"$USER"' | je suis <rat >ra"     tat"ouille >>ratat'a  ' tat | je $USER RATATOUILLE
+
+$USER$USER
+
+je suis >   otu <    in | echo caca >>  appn <<  here
+
+je suis >'   otu' <'    in' | echo caca >>'  appn' <<'  here'
+
+je suis >"otu" <in | echo caca >>"appn" <<"here"
+
+je un et "$USER"je me nourris'$USER' de | je '$USER' $USER "$USER" "'$USER'" '"$USER"' | je suis <rat >ra"     tat"ouille >>ratat'a  ' tat |$USER
+
+echo je un et "$USER"je me nourris'$USER' de  je '$USER' $USER "$USER" "'$USER'" '"$USER"'  je suis <rat >ra"     tat"ouille ratat'a  ' tat $USER
+
+je | je | je | je    | jeeee'    rewfd' " jlrehg;lrek<<" >>out |$je | wjekhf
+RATATOUILLE
+
+echo apap | rev > out | echo on code un minishell >>out |echo et "c'est rigolo tant qu'on" ecrit pas valgrind aha >>out | echo $USER >> out
+
+je suis >out >out1 <in >out3 | echo caca >out4 <test <in
+
+ls >a | ls | rev >>a
+
+rev <<here1 | rev <<here2 <<here3 | rev <<here4 <<here5
+
+rev <<here1 <<here2 <<here3 | rev <<here2 <<here3 | rev <<here4 <in <<here5
+
+touch ktt | cat <<here1 <<here2 <<here3 >>krr | rev <<here2 <<here3 krr | cat <<here4 <<here5 >out
+
+$YGBJHSNKA$YSVGHJKN"'$USER'"$USERFGHJK$TRYGEUHKJ
+
+$YGBJHSNKA$YSVGHJKN"RTQFG"$USERFGHJK$TRYGEUHKJ
+
+$YGBJHSNKA$YSVGHJKN$USERFGHJK$TRYGEUHKJ
+
+$YGBJHSNKA$YSVGHJKN$USER$$
+
+krrrr$USER$$
+
+ls >a | rev
+ls >a | cat
+cat | ls >a
+rev | ls >a
+ls >a | rev | cat | cat | rev
+ls >a | rev | cat | cat | echo caca
+
+echo caca << | cat e
+bash: syntax error near unexpected token `|'
+-> 2
+
+echo caca <<
+bash: syntax error near unexpected token `newline'
+-> 2
+
+<<1 <<2 <<3 <<4 <<1 <<2 <<3 <<4 <<1 <<2 <<3 <<4 <<1 <<2 <<3 <<4 <<1
+		bash: maximum here-document count exceeded	//	->	2 encore la globale
+
+éé
+
+jemercie@1B3:/nfs/homes/jemercie/Documents/polinishell/offishell/jeanne/Prompt$ caca <|
+bash: syntax error near unexpected token `|'
+
+/usr/bin/wc: invalid option -- 'y'
+
+je | je | je | je    | jeeee'    rewfd' " jlrehg;lrek<<" >>out |$je | wjekhf
+
+
+	-> valgrind  : jeeee'    rewfd' " jlrehg;lrek<<" >>out
+
+
+>"" |""""|""""""''$|""
+
+unset COLORTERM
+unset LANGUAGE
+unset SSH_AUTH_SOCK
+unset SESSION_MANAGER
+unset GNOME_TERMINAL_SCREEN
+unset SSH_AGENT_PID
+unset XDG_CURRENT_DESKTOP
+unset LANG
+unset USER
+unset XDG_SESSION_TYPE
+unset SHLVL
+unset LD_LIBRARY_PATH
+unset HOME
+unset OLDPWD
+unset DESKTOP_SESSION
+unset GTK_MODULES
+unset XDG_SEAT_PATH
+unset MANAGERPID
+unset DBUS_SESSION_BUS_ADDRESS
+unset DBUS_STARTER_BUS_TYPE
+unset IM_CONFIG_PHASE
+unset LOGNAME
+unset JOURNAL_STREAM
+unset _
+unset XDG_SESSION_CLASS
+unset TERM
+unset GNOME_DESKTOP_SESSION_ID
+unset PATH
+unset INVOCATION_ID
+unset GDM_LANG
+unset XDG_MENU_PREFIX
+unset XDG_SESSION_PATH
+unset XDG_RUNTIME_DIR
+unset GLIBCPP_FORCE_NEW
+unset DISPLAY
+unset XDG_SESSION_DESKTOP
+unset GNOME_TERMINAL_SERVICE
+unset XMODIFIERS
+unset XAUTHORITY
+unset XDG_GREETER_DATA_DIR
+unset KRB5CCNAME
+unset SHELL
+unset QT_ACCESSIBILITY
+unset GDMSESSION
+unset DOCKER_HOST
+unset GPG_AGENT_INFO
+unset QT_IM_MODULE
+unset PWD
+unset XDG_CONFIG_DIRS
+unset XDG_DATA_DIRS
+unset DBUS_STARTER_ADDRESS
+unset VTE_VERSION
+unset GLIBCXX_FORCE_NEW
+unset LD_PRELOAD
+
+
+valgrind --trace-children=yes --suppressions=/nfs/homes/jemercie/Documents/polinishell-main/offishell/minishell/vsupp --leak-check=full ./minishell
+
+
+unset SSH_AUTH_SOCK SESSION_MANAGER GNOME_TERMINAL_SCREEN SSH_AGENT_PID XDG_CURRENT_DESKTOP LANG LANGUAGE USER XDG_SESSION_TYPE SHLVL LD_LIBRARY_PATH HOME OLDPWD DESKTOP_SESSION GTK_MODULES XDG_SEAT_PATH MANAGERPID DBUS_SESSION_BUS_ADDRESS DBUS_STARTER_BUS_TYPE COLORTERM IM_CONFIG_PHASE LOGNAME JOURNAL_STREAM _ XDG_SESSION_CLASS TERM GNOME_DESKTOP_SESSION_ID PATH INVOCATION_ID GDM_LANG XDG_MENU_PREFIX XDG_SESSION_PATH XDG_RUNTIME_DIR GLIBCPP_FORCE_NEW DISPLAY XDG_SESSION_DESKTOP GNOME_TERMINAL_SERVICE XMODIFIERS XAUTHORITY XDG_GREETER_DATA_DIR KRB5CCNAME SHELL QT_ACCESSIBILITY GDMSESSION DOCKER_HOST GPG_AGENT_INFO QT_IM_MODULE PWD XDG_CONFIG_DIRS XDG_DATA_DIRS DBUS_STARTER_ADDRESS VTE_VERSION GLIBCXX_FORCE_NEW LD_PRELOAD

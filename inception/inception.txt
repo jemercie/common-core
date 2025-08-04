@@ -1,0 +1,117 @@
+sudo docker image ls
+sudo docker image rm -f srcs_mariadb srcs_wordpress srcs_nginx
+sudo docker volume ls
+sudo docker volume rm -f srcs_mariadb srcs_wordpress
+sudo docker network 
+sudo docker system prune -a
+
+sudo docker-compose up --build --force-recreate
+
+version linux: lsb_release -a
+
+usermod -aG sudo username + sudo visudo
+
+https://docs.docker.com/engine/install/linux-postinstall/
+		-> sudo usermod -aG docker $USER
+		-> sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+ 		-> sudo chmod g+rwx "$HOME/.docker" -R
+			-> REBOOT
+
+debian usermod pb: use 'su -' instead of 'su'
+usermod is almost certainly installed. But it is in /usr/sbin/ and that directory is (by default) only in root's $PATH, not in the $PATH of non-root users. And if you use su to become root, you keep your user's $PATH. If you use su - instead, you get root's $PATH.
+
+groups username
+
+
+1. Set up Docker's apt repository.
+
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+2. Install the Docker packages.
+
+ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+3. Verify that the installation is successful by running the hello-world image:
+
+ sudo docker run hello-world
+ 
+ 
+https://hub.docker.com/_/mariadb
+
+
+https://www.interviewbit.com/blog/mysql-commands/
+*  ALPINE  *
+
+package management APK
+	- update: apk update
+	- version & available update : apk version -v
+	- updating a particular package : apk add -u package1 package2
+					  apk upgrade package1 package2
+	- installing packages : apk add package1 package2
+	- searching the package database : apk search searchword
+	- removing packages : apk del package1 package2
+	- only downloading packages : apk fetch package1 package2
+	- update all installed packages : apk upgrade -U -a
+
+-> docker build -t nginx src/requirements/nginx
+-> docker run -it nginx (it pour avoir le terminal, -d pour le lancer en mode detach et continuer a avoir acces au terminal)
+-> rooooooh, mkdir -p .//cree/toute/larborescence/de/fichiers/passee/en/param/ici
+
+
+COPY	conf/nginx.conf /etc/nginx/nginx.conf
+
+
+mariadbbb
+Quand t'installe mariadb le fichier de configuration .cnf est situe : 
+	/etc/my.cnf.d/mariadb-server.cnf
+il cree pas tous les fichiers mysql necessaires 
+https://serverfault.com/questions/927314/mariadb-service-script-doesnt-create-var-run-mysqld
+
+
+
+https://wiki.alpinelinux.org/wiki/MariaDB
+
+https://www.youtube.com/watch?v=gEceSAJI_3s
+
+
+network driver:
+https://devopssec.fr/article/fonctionnement-manipulation-reseau-docker
+
+
+https://www.youtube.com/watch?v=LFSSS_wOFsg
+
+https://www.youtube.com/watch?v=uAH2zCYzhNw
+
+mysql
+https://www.youtube.com/watch?v=Cz3WcZLRaWc
+https://www.interviewbit.com/blog/mysql-commands/
+db normalisation
+https://www.youtube.com/watch?v=GFQaEYEc8_8
+
+https://next.ink/4993/alpine-linux-comment-utiliser-et-y-installer-serveur-web/
+
+
+
+php man
+https://www.php.net/manual/fr/features.commandline.options.php
+
+
+
+
+https://mariadb.com/resources/blog/using-mysql_embedded-and-mysqld-bootstrap-to-tinker-with-privilege-tables/
+
+
+interessanttt a lire - user management- 
+https://ioflood.com/blog/install-adduser-linux/
